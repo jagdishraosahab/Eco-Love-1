@@ -1,0 +1,20 @@
+.boxctrl::-webkit-scrollbar{
+    display: none;
+
+}
+
+.ctrl::-webkit-scrollbar{
+    display: none;
+}
+
+.giftctrl::-webkit-scrollbar{
+    display: none;
+}
+
+.saleboxctrl::-webkit-scrollbar{
+    display: none;
+}
+
+.newproduct::-webkit-scrollbar{
+    display: none;
+}
