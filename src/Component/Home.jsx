@@ -24,7 +24,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className="">
         <Navbar cart={cart} />
         <Page1 />
         <Page2 />

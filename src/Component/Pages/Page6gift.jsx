@@ -32,12 +32,12 @@ function Page6gift() {
     }
 
   return (
-    <div className="w-full mt-28">
+    <div className="w-full mt-16 lg:mt-28">
       <div className="max-w-screen-xl   mx-auto">
         <div>
           <HeadArrow title={"Gift Sets"} />
         </div>
-        <div className="giftctrl w-full overflow-hidden overflow-x-scroll flex gap-20">
+        <div className="giftctrl w-full overflow-hidden overflow-x-scroll flex gap- lg:gap-20">
         { giftProducts.map((items, index)=> <Giftcards key={index} index={index} giftItems={items} clickHandler={clickHandler} clickHandler2={clickHandler2}  />)}
         </div>
       </div>

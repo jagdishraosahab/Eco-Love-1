@@ -14,12 +14,12 @@ function Page5() {
 
   const [newProducts , setNewProducts] = useState(data)
   return (
-    <div className='w-full mt-28'>
-        <div className='max-w-screen-xl p-5 mx-auto '>
-         <div className='heading&arrow w-full'>
+    <div className='w-full mt-16 lg:mt-28'>
+        <div className='max-w-screen-xl  mx-auto '>
+         <div className='heading&arrow   w-full'>
          <HeadArrow  title={"New Items"}/>
          </div>
-         <div className='newproduct w-full flex gap-20 overflow-x-scroll mt-10'>
+         <div className='newproduct w-full lg:flex-nowrap lg:mx-0  mx-[1.3vh] flex-wrap  flex gap-5 lg:gap-20 overflow-x-scroll mt-10'>
          {newProducts.map((items, index)=> <Cardnew index={index} key={index} items={items} />)}
          </div>
         </div>

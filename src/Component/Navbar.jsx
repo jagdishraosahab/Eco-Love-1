@@ -7,12 +7,22 @@ import { RiCloseLargeLine } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
 import {useGSAP} from '@gsap/react'
 import gsap from "gsap";
+import { motion, stagger } from 'framer-motion'
+
 
 
 function Navbar( ) {
 
   const [isOpen, setisOpen] = useState(true)
   const [cart , iscart] = useState(null)
+
+  const container = {
+    show :{
+      transition :{
+        satggerChildren : 0.5
+      }
+    }
+  }
 
 
   
@@ -42,7 +52,7 @@ function Navbar( ) {
     if(isOpen){
       gsap.to(".ToggleSearch" , {
         top: 15,
-        duration: 0.2,
+        duration: 0.5,
        })
     }else{
        gsap.to(".ToggleSearch" , {
@@ -65,7 +75,8 @@ function Navbar( ) {
   
   return (
     <div className="py-7  w-full">
-      <div className="px-3 lg:px-0 container max-w-screen-xl mx-auto flex itmes-center justify-between ">
+      <motion.div animate={{y:0}} initial={{y:-100}} variants={container}  transition={{ease : "linear" , duration:0.4 }}
+       className="px-3 lg:px-0 container max-w-screen-xl mx-auto flex itmes-center justify-between ">
         <div className="leftside flex items-center  gap-20 text-black ">
           <NavLink onClick={menuClick} >
             <RxHamburgerMenu />
@@ -88,7 +99,7 @@ function Navbar( ) {
           <NavLink onClick={searchClick} className='hidden lg:block'>Search</NavLink>
 
           {/* SEARCH DIV  */}
-          <div className="ToggleSearch  absolute top-[-10%] left-[40%] flex ">
+          <div className="ToggleSearch hidden   absolute top-[-10%] left-[40%] lg:flex ">
             <input className="px-10 mr-5 py-3 rounded-lg bg-[#838A60] text-white outline-none " placeholder="Search Products" type="text" />
                  <button className="bg-[#BA9659] font-semibold px-5 py-3 flex gap-3 items-center rounded-lg">< IoSearch/></button>
           </div>
@@ -108,12 +119,13 @@ function Navbar( ) {
             </span>
           </NavLink>
         </div>
-      </div>
+      </motion.div>
 
-      <hr className="w-full h-[2px] mt-8 bg-[#838A60]" />
+      < motion.hr animate={{x:0}} initial={{x:200}}
+       className="w-full h-[2px] mt-8 bg-[#838A60]" />
 
      {/* TOGGLE NAVBAR */}
-      <div className="togglenav w-[40%] overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
+      <div className="togglenav w-full lg:w-[40%] hidden lg:block overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
           <h1 className="h1 text-5xl font-[newyork] font-semibold text-[#BA9659] text-center mb-5   ">Welcome To Green City</h1>
           <h1 className="h1 text-4xl font-[newyork]  uppercase mb-5 font-bold text-[#838A60]">Catalog</h1>
           <h1 className="h1 text-4xl font-[newyork] uppercase mb-5 font-bold text-[#838A60]">Account</h1>

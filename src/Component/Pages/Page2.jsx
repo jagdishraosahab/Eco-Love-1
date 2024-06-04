@@ -16,7 +16,7 @@ function Page2() {
 
   return (
     <div className='w-full '>
-        <div className='max-w-screen-xl flex flex-wrap lg:flex-nowrap lg:flex gap-1 lg:gap-28 p-5 mx-auto'>
+        <div className='max-w-screen-xl  flex flex-wrap lg:flex-nowrap lg:flex gap-1 lg:gap-28 p-5 mx-auto'>
              <div className='w-[48%] h-[20vh] lg:w-[18%] lg:h-[20vh] border-[2px] rounded-lg border-[#838A60] flex flex-col items-center justify-center '>
             <IoLeafOutline size='5em' color='#838A60' />
             <h3 className='text-sm  mt-2 font-semibold font-[poppins]'>Eco Friendly Goods</h3>

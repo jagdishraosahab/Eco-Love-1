@@ -63,8 +63,8 @@ function Page4() {
     box.scrollLeft += 200;
   }
   return (
-    <div className="w-full lg:overflow-x-hidden ">
-      <div className="lg:max-w-screen-xl w-full overflow-x-scroll lg:mt-32  mt-10  mx-auto">
+    <div className="prodcut w-full lg:overflow-x-hidden ">
+      <div className="lg:max-w-screen-xl w-full  lg:mt-32  mt-10  mx-auto">
         <div className="">
           <HeadArrow
             title={"Popular Products"}
@@ -72,7 +72,7 @@ function Page4() {
             moveRight={moveRight}
           />
         </div>
-        <div className="ctrl lg:w-full lg:h-full    w-[45%] h-[30vh] flex   gap-5 lg:gap-[80px] flex-shrink-0 lg:overflow-x-scroll transition-all duration-1000 ml-3 lg:ml-0 mt-6 lg:mt-0 ">
+        <div className="ctrl lg:w-full lg:h-full    w-[45%] h-[30vh] flex   gap-5 lg:gap-[80px] flex-shrink-0 overflow-x-scroll transition-all duration-1000 ml-3 lg:ml-0 mt-6 lg:mt-0 ">
           {products.map((items, index) => (
             <Cards
               items={items}

@@ -4,8 +4,10 @@
 }
 
 .ctrl::-webkit-scrollbar{
-    display: none;
+    display:none ;
 }
+
+
 
 .giftctrl::-webkit-scrollbar{
     display: none;
@@ -16,5 +18,14 @@
 }
 
 .newproduct::-webkit-scrollbar{
+    display: none;
+}
+
+.card::-webkit-scrollbar{
+    display: none;
+}
+
+
+.product::-webkit-scrollbar{
     display: none;
 }
