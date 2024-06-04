@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-    <div className=' bg-[#F4EBDA]  '>
+    <div className=' bg-[#F4EBDA] overflow-x-hidden  '>
       <Routes>
        <Route path='/' element={<Home/>} />
        <Route path='/catlog' element={<Catlog/>} />
