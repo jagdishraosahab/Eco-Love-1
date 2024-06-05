@@ -5,14 +5,16 @@ function Cardsale({items , clickHandler2 , index}) {
 
   const {img , text , price , isLiked , isCart} = items
   return (
-    <Link to='/productpage:id' className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] flex flex-shrink-0 flex-col relative ">
-      <div className=" h-[25vh] lg:h-[45vh] bg-purple-600 rounded-lg overflow-hidden border-[1px] border-[#838A60]">
+    <Link className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] flex flex-shrink-0 flex-col relative ">
+    <Link to='/productpage:id'>
+    <div className=" h-[25vh] lg:h-[45vh] bg-purple-600 rounded-lg overflow-hidden border-[1px] border-[#838A60]">
         <img
           className="w-full h-full object-cover"
           src={img}
           alt=""
         />
       </div>
+    </Link>
       <div className="">
         <h1 className="text-sm lg:text-md font-[poppins] font-bold leading-none tracking-tight mt-5">
          {text}

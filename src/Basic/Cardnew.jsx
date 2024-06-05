@@ -7,14 +7,16 @@ function Cardnew({items , index , clickHandler2}) {
   const {img , text , price , isAdded} = items
 
   return (
-    <Link to='/productpage:id' className="w-[45%] lg:w-[20%] flex-shrink-0 flex flex-col relative ">
-      <div className="h-[20vh] lg:h-[45vh]  rounded-lg overflow-hidden border-[1px] border-[#838A60]">
+    <div to='/productpage:id' className="w-[45%] lg:w-[20%] flex-shrink-0 flex flex-col relative ">
+     <Link to='/productpage:id'>
+     <div className="h-[20vh] lg:h-[45vh]  rounded-lg overflow-hidden border-[1px] border-[#838A60]">
         <img
           className="w-full h-full object-cover"
           src={img}
           alt=""
         />
       </div>
+     </Link>
       <div className="">
         <h1 className=" text-sm lg:text-md font-[poppins] font-bold leading-none tracking-tight mt-5">
           {text}
@@ -32,7 +34,7 @@ function Cardnew({items , index , clickHandler2}) {
           </h3>
         </button>
       </div>
-    </Link >
+    </div>
   );
 }
 
