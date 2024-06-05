@@ -11,7 +11,7 @@ function Page1() {
         <motion.h1 animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4}} className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] ">
           Green City Style
         </motion.h1>
-        <Link  to="/catlog" className="  absolute top-[80%] left-[-1vh] lg:top-[9%] lg:left-[67%] lg:block lg:py-4 lg:px-28 py-2 px-32  bg-[#838A60] rounded-xl text-lg lg:text-xl font-[poppins] text-white">
+        <Link  to="/catlog" className="  absolute top-[80%] left-[1vh] mr-2 lg:mr-0 lg:top-[9%] lg:left-[67%] lg:block lg:py-4 lg:px-28 py-2 px-32  bg-[#838A60] rounded-xl text-lg lg:text-xl font-[poppins] text-white">
           Go To Catalog
         </Link >
       </div>
