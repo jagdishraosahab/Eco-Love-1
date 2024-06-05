@@ -65,9 +65,9 @@ function Navbar( ) {
      
    })
 
-   const upDatedCart = ()=>{
-           iscart([...cart , cart+1])
-   }
+  //  const upDatedCart = ()=>{
+  //          iscart([...cart , cart+1])
+  //  }
 
    
 
@@ -99,6 +99,7 @@ function Navbar( ) {
           <NavLink onClick={searchClick} className='hidden lg:block'>Search</NavLink>
 
           {/* SEARCH DIV  */}
+         
           <div className="ToggleSearch hidden   absolute top-[-10%] left-[40%] lg:flex ">
             <input className="px-10 mr-5 py-3 rounded-lg bg-[#838A60] text-white outline-none " placeholder="Search Products" type="text" />
                  <button className="bg-[#BA9659] font-semibold px-5 py-3 flex gap-3 items-center rounded-lg">< IoSearch/></button>
@@ -125,7 +126,7 @@ function Navbar( ) {
        className="w-full h-[2px] mt-8 bg-[#838A60]" />
 
      {/* TOGGLE NAVBAR */}
-      <div className="togglenav w-full lg:w-[40%] hidden lg:block overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
+      <div className="togglenav hidden z-30 w-full lg:w-[40%]  lg:block overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
           <h1 className="h1 text-5xl font-[newyork] font-semibold text-[#BA9659] text-center mb-5   ">Welcome To Green City</h1>
           <h1 className="h1 text-4xl font-[newyork]  uppercase mb-5 font-bold text-[#838A60]">Catalog</h1>
           <h1 className="h1 text-4xl font-[newyork] uppercase mb-5 font-bold text-[#838A60]">Account</h1>

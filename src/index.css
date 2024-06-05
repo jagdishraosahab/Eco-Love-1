@@ -6,3 +6,13 @@
 .h1{
  cursor: pointer;
 }
+
+@font-face {
+    font-family: NewYork;
+    src: url(/Eco/public/NewYork\ PERSONAL\ USE.ttf);
+}
+
+@font-face {
+    font-family:Poppins ;
+    src: url(/Eco/public/Poppins/Poppins-Medium.ttf);
+}

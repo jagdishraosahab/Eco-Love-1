@@ -63,7 +63,7 @@ function Page4() {
     box.scrollLeft += 200;
   }
   return (
-    <div className="prodcut w-full lg:overflow-x-hidden ">
+    <div className="prodcut hidden lg:block w-full lg:overflow-x-hidden ">
       <div className="lg:max-w-screen-xl w-full  lg:mt-32  mt-10  mx-auto">
         <div className="">
           <HeadArrow
