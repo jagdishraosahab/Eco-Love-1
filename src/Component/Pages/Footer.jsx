@@ -4,7 +4,7 @@ import { IoLeaf } from "react-icons/io5";
 
 function Footer() {
   return (
-    <div className='w-full h-[60vh] lg:mb-0 mb-[20vh] relative lg:h-[50vh] bg-[#838A60] mt-10 rounded-tl-2xl  rounded-tr-2xl'>
+    <div className='w-full h-[60vh] lg:mb-0  relative lg:h-[50vh] bg-[#838A60] mt-10 rounded-tl-2xl  rounded-tr-2xl'>
       <div className='w-full lg:max-w-screen-xl mx-auto flex items-center gap-32'>
         <div className='logo'>
        <div className='ml-16 mb-3' >
