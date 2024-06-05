@@ -1,6 +1,6 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Cards({
   giftItems,
@@ -14,24 +14,24 @@ function Cards({
   return (
     <>
       <div className="lg:w-[20%]   w-full relative shrink-0">
-        <Link to='/productpage:id'>
-        <div className="card bg-red-300 lg:w-full w-full  lg:overflow-hidden h-full lg:h-[45vh] lg:mt-10  border-[1px] border-[#838A60] rounded-md lg:rounded-lg ">
-          <img
-            className="lg:w-full lg:h-full w-full h-full   object-cover  "
-            src={img}
-            alt=""
-          />
-          <button
-            onClick={() => clickHandler(index)}
-            className={`lg:w-[35px] lg:h-[35px] w-[30px] h-[30px]   top-[2%] lg:top-[9.5%]  rounded-full ${
-              isAdded === true ? "bg-red-400" : " bg-slate-50"
-            } left-[79%] absolute `}
-          >
-            <span className="flex items-center  lg:flex lg:items-center lg:justify-center lg:mt-[2.2px] lg:ml-[1px]">
-              <CiHeart color=" black" size="2em" />
-            </span>
-          </button>
-        </div>
+        <Link to="/productpage:id">
+          <div className="card bg-red-300 lg:w-full w-full  lg:overflow-hidden h-full lg:h-[45vh] lg:mt-10  border-[1px] border-[#838A60] rounded-md lg:rounded-lg ">
+            <img
+              className="lg:w-full lg:h-full w-full h-full   object-cover  "
+              src={img}
+              alt=""
+            />
+            <button
+              onClick={() => clickHandler(index)}
+              className={`lg:w-[35px] lg:h-[35px] w-[30px] h-[30px]   top-[2%] lg:top-[9.5%]  rounded-full ${
+                isAdded === true ? "bg-red-400" : " bg-slate-50"
+              } left-[79%] absolute `}
+            >
+              <span className="flex items-center  lg:flex lg:items-center lg:justify-center lg:mt-[2.2px] lg:ml-[1px]">
+                <CiHeart color=" black" size="2em" />
+              </span>
+            </button>
+          </div>
         </Link>
 
         <div className="details   mt-5">

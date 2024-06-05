@@ -12,6 +12,17 @@ function Page6sale() {
   ];
 
   const [sale , setSale ] = useState(raw)
+
+  function clickHandler2(index) {
+    setSale((prev) => {
+      return prev.map((items, itemsIndex) => {
+        if (itemsIndex === index) return { ...items, isCart: !items.isCart };
+        return items;
+      });
+    });
+  }
+
+
   return (
     <div className="w-full mt-20">
       <div className="max-w-screen-xl  mx-auto">
@@ -19,7 +30,7 @@ function Page6sale() {
           <HeadArrow title="Sale" />
         </div>
         <div className="saleboxctrl w-full mt-10 flex  overflow-x-scroll  lg:gap-20">
-          {sale.map((items,index)=> <Cardsale key={index} items={items} />)}
+          {sale.map((items,index)=> <Cardsale key={index} index={index} clickHandler2={clickHandler2} items={items} />)}
           
         </div>
       </div>

@@ -1,12 +1,13 @@
 import React from 'react'
 import { CiHeart } from "react-icons/ci";
 import MoreCrad from './MoreCrad';
+import { Link } from 'react-router-dom';
 
 function Giftcards({giftItems , clickHandler ,clickHandler2 , index}) {
 
     const {giftimg , giftPrice , isLiked , text , isCart } = giftItems
   return (
-    <div className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] relative shrink-0">
+    <Link to='/productpage:id' className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] relative shrink-0">
         <div className="card bg-red-300 w-full overflow-hidden h-[25vh] lg:h-[45vh] mt-10 border-[1px] border-[#838A60] rounded-lg ">
           <img className="w-full h-full  object-cover  " src={giftimg} alt="" />
           <button
@@ -39,7 +40,7 @@ function Giftcards({giftItems , clickHandler ,clickHandler2 , index}) {
             </h3>
           </button>
         </div>
-      </div>
+      </Link>
   )
 }
 
