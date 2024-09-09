@@ -139,6 +139,8 @@ function Search() {
       });
     });
   }
+
+  
 const [rawdata, setrawdata] = useState(data)
   return (
     <div className="w-full ">

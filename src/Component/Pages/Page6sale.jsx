@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import HeadArrow from "../../Basic/HeadArrow";
 import Cardsale from "../../Basic/Cardsale";
+import { ProductContext } from "../Context";
 
 function Page6sale() {
   var raw = [
@@ -11,6 +12,9 @@ function Page6sale() {
     { img: "https://img.freepik.com/free-photo/front-view-wooden-spoons-with-pots-cinnamon-dark-table-photo-color-seasoning-salt-cutlery_179666-17653.jpg?t=st=1714750297~exp=1714753897~hmac=89fb76de955ef37431a2cffa2eeb52bd330de0f3eaf9e4a140ecf7d227dd7210&w=996", text: "For More", price: "", isLiked: false, isCart: false },
   ];
 
+  const {product} = useContext(ProductContext)
+  console.log(product[3].page7
+  )
   const [sale , setSale ] = useState(raw)
 
   function clickHandler2(index) {
@@ -30,7 +34,7 @@ function Page6sale() {
           <HeadArrow title="Sale" />
         </div>
         <div className="saleboxctrl w-full mt-10 flex  overflow-x-scroll  lg:gap-20">
-          {sale.map((items,index)=> <Cardsale key={index} index={index} clickHandler2={clickHandler2} items={items} />)}
+          {product[3].page7.map((items,index)=> <Cardsale key={index} index={index} clickHandler2={clickHandler2} items={items} />)}
           
         </div>
       </div>

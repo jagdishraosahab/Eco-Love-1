@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CiHeart } from "react-icons/ci";
 import MoreCrad from './MoreCrad';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../Component/Context';
 
 function Giftcards({giftItems , clickHandler ,clickHandler2 , index}) {
 
-    const {giftimg , giftPrice , isLiked , text , isCart } = giftItems
+  const {addToCartPgae6} = useContext(ProductContext)
+
+    const {img , price , isLiked , productName , isCart } = giftItems
   return (
     <div  className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] relative shrink-0">
         <div to='/productpage:id' className="card bg-red-300 w-full overflow-hidden h-[25vh] lg:h-[45vh] mt-10 border-[1px] border-[#838A60] rounded-lg ">
-          <img className="w-full h-full  object-cover  " src={giftimg} alt="" />
+          <img className="w-full h-full  object-cover  " src={img} alt="" />
           <button
             onClick={() => clickHandler(index)}
             className={`hidden lg:block w-[35px] h-[35px] top-[9.5%]  rounded-full ${
@@ -25,12 +28,12 @@ function Giftcards({giftItems , clickHandler ,clickHandler2 , index}) {
 
         <div className="details mt-5">
           <h2 className="text-sm lg:text-md font-[poppins]  font-bold leading-none tracking-tight">
-            {text}
+            {productName}
           </h2>
 
-          <h4 className="text-xl lg:text-md mt-2 font-bold font-[poppins]">${giftPrice}</h4>
+          <h4 className="text-xl lg:text-md mt-2 font-bold font-[poppins]">${price}</h4>
           <button
-            onClick={() => clickHandler2(index)}
+            onClick={() => addToCartPgae6(index)}
             className={`px-10 py-3 lg:py-3 mt-4 lg:px-[65px] rounded-xl ${
               isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
             }`}

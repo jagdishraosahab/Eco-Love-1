@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProductContext } from "../Component/Context";
 
 function Cardsale({items , clickHandler2 , index}) {
 
-  const {img , text , price , isLiked , isCart} = items
+  const {addToCartPgae7} = useContext(ProductContext)
+
+  const {img , productName , price , isLiked , isCart} = items
   return (
     <Link className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] flex flex-shrink-0 flex-col relative ">
     <Link to='/productpage:id'>
@@ -17,10 +20,10 @@ function Cardsale({items , clickHandler2 , index}) {
     </Link>
       <div className="">
         <h1 className="text-sm lg:text-md font-[poppins] font-bold leading-none tracking-tight mt-5">
-         {text}
+         {productName}
         </h1>
         <h4 className="text-xl lg:text-md mt-2 font-bold font-[poppins]">${price}</h4>
-        <button onClick={()=>clickHandler2(index)}
+        <button onClick={()=>addToCartPgae7(index)}
         className={`px-10 py-3 lg:py-3 mt-4 lg:px-[65px] rounded-xl  ${isCart ? 'bg-[#838A60]' :'bg-[#BA9659]'}`}>
           <h3 className="text-sm text-white font-[poppins] font-bold ">
             {isCart ? "Added" : "Add To Cart"}

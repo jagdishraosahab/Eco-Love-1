@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import HeadArrow from "../../Basic/HeadArrow";
 import Cards from "../../Basic/Cards";
+import { ProductContext } from "../Context";
 
 function Page4() {
+
+  const {product} = useContext(ProductContext)
+
+  // console.log(product[0])
+
+  const productsFromContext = product[0]
+
+  
+
   var data = [
     {
       img: "https://img.freepik.com/premium-photo/reusable-shopping-bags-brown-wall-zero-waste-concept-no-plastic_136404-1061.jpg?w=360",
@@ -35,6 +45,10 @@ function Page4() {
  
   ];
 
+
+  // console.log(productFormContext)
+  
+
   const [products, setProducts] = useState(data);
 
   function clickHandler(index) {
@@ -45,14 +59,7 @@ function Page4() {
       });
     });
   }
-  function clickHandler2(index) {
-    setProducts((prev) => {
-      return prev.map((items, itemsIndex) => {
-        if (itemsIndex === index) return { ...items, isCart: !items.isCart };
-        return items;
-      });
-    });
-  }
+
 
   function moveLeft() {
     var box = document.querySelector(".ctrl");
@@ -73,15 +80,17 @@ function Page4() {
           />
         </div>
         <div className="ctrl lg:w-full lg:h-full    w-[45%] h-[30vh] flex   gap-5 lg:gap-[80px] flex-shrink-0 overflow-x-scroll transition-all duration-1000 ml-3 lg:ml-0 mt-6 lg:mt-0 ">
-          {products.map((items, index) => (
+          {product[0].page4.map((items, index) => (
             <Cards
               items={items}
               key={index}
               index={index}
               clickHandler={clickHandler}
-              clickHandler2={clickHandler2}
+            
             />
           ))}
+
+          
         </div>
       </div>
     </div>

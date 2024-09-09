@@ -6,6 +6,7 @@ import './App.css'
 import LocomotiveScroll from 'locomotive-scroll';
 import Productpage from './utils/Productpage'
 import Account from './utils/Account'
+import Cart from './Component/Cart'
 
 
 
@@ -21,6 +22,8 @@ function App() {
        <Route path='/' element={<Home/>} />
        <Route path='/catlog' element={<Catlog/>} />
        <Route path='/account' element={<Account/>} />
+       <Route path='/cart' element={<Cart/>} />
+
 
        <Route path='/productpage:id' element={<Productpage/>} />
       </Routes>

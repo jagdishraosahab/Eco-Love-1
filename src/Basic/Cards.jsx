@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { ProductContext } from "../Component/Context";
 
 function Cards({
   giftItems,
   items = "nothing",
   clickHandler = "nothing",
   clickHandler2 = "nothing",
-  index = "mothing",
+  index ,
 }) {
-  const { img, productName, Price, isAdded, isCart } = items;
+  const { img, productName, price, isAdded, isCart } = items;
 
+  const { addToCart , removeFromCart} =   useContext(ProductContext)
   return (
     <>
       <div className="lg:w-[20%]   w-full relative shrink-0">
@@ -39,17 +41,28 @@ function Cards({
             {productName}
           </h2>
 
-          <h4 className="text-md mt-2 font-bold font-[poppins]">${Price}</h4>
-          <button
-            onClick={() => clickHandler2(index)}
+          <h4 className="text-md mt-2 font-bold font-[poppins]">${price}</h4>
+         {isCart ?  <button
+            onClick={() => removeFromCart(productName)}
             className={`py-3 mt-4 px-[65px] rounded-xl ${
               isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
             }`}
           >
-            <h3 className="text-sm text-white font-[poppins] font-bold ">
-              {isCart === true ? "Added" : " Add To Cart"}
-            </h3>
-          </button>
+          <h3 className="text-sm text-white font-[poppins] font-bold ">
+            Remove
+          </h3>
+          </button> : 
+          
+          <button
+            onClick={() => addToCart(index)}
+            className={`py-3 mt-4 px-[65px] rounded-xl ${
+              isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
+            }`}
+          >
+          <h3 className="text-sm text-white font-[poppins] font-bold ">
+              Add To Cart
+          </h3>
+          </button>}
         </div>
       </div>
     </>

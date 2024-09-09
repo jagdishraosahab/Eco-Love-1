@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
+import { ProductContext } from "../Component/Context";
 
 function Cardnew({items , index , clickHandler2}) {
 
 
   const {img , text , price , isAdded} = items
+
+  const { addToCartPgae5 } =   useContext(ProductContext)
+
 
   return (
     <div to='/productpage:id' className="w-[45%] lg:w-[20%] flex-shrink-0 flex flex-col relative ">
@@ -22,10 +27,10 @@ function Cardnew({items , index , clickHandler2}) {
           {text}
         </h1>
         <h4 className="text-md mt-2 font-bold font-[poppins]">${price}</h4>
-        <button onClick={()=>clickHandler2(index)}
+        <button onClick={()=>addToCartPgae5(index)}
          className={`px-10 py-3 lg:py-3 mt-4 lg:px-[65px] rounded-xl  ${isAdded ? 'bg-[#838A60]' :'bg-[#BA9659]'}`}>
           <h3 className="text-sm text-white font-[poppins] font-bold ">
-            {isAdded ? "Added" : "Add To Cart"}
+            {isAdded ? <Link to='/cart'>Go To Cart</Link> : "Add To Cart"}
           </h3>
         </button>
         <button className="absolute top-[0%] left-[-0%] p-2 rounded-br-xl bg-[#838A60]">
