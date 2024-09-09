@@ -25,7 +25,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="max-w-screen-xl min-h-screen mx-auto py-2 bg-red-400 overflow-hidden">
+    <div className="max-w-screen-xl min-h-screen mx-auto py-2 overflow-hidden">
       <div className="flex items-center gap-1">
         <Link to="/" className="text-2xl font-[NewYork]">
           Home
