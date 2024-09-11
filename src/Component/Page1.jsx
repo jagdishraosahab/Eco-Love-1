@@ -11,13 +11,11 @@ function Page1() {
         <motion.h1 animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4}} className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] ">
           Green City Style
         </motion.h1>
-<motion.div
-           animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4 , delay:0.4}}
->
+
   <Link  to="/catlog" className="  absolute top-[80%] left-[1vh] mr-2 lg:mr-0 lg:top-[9%]  lg:left-[67%] lg:block lg:py-4 lg:px-[17vh] py-2 px-32  bg-[#838A60] rounded-xl text-lg lg:text-xl font-[Poppins] text-center text-white">
           Go To Catalog
         </Link >
-</motion.div>
+
         
 
       </div>
