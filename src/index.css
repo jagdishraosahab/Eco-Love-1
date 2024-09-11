@@ -8,7 +8,9 @@
 @layer base {
   @font-face {
     font-family: NewYork;
-    src: url(/Eco/public/Fonts/Poppins/NewYork\ PERSONAL\ USE.ttf );
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Eco/public/Fonts/Poppins/NewYork\ PERSONAL\ USE.ttf ) format('woff2');
     font-display: swap;
   }
 }
@@ -17,6 +19,8 @@
   @font-face {
     font-display: swap;
     font-family: Poppins;
-    src: url(/Eco/public/Fonts/Poppins/Poppins-Regular.ttf);
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Eco/public/Fonts/Poppins/Poppins-Regular.ttf) format('woff2');
   }
 }
