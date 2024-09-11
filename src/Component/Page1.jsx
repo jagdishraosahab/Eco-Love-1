@@ -18,7 +18,7 @@ function Page1() {
       <div    className=" lg:flex  items-center justify-between">
         <motion.p animate={{y:0 , opacity:1}}  initial={{y:100 , opacity:0}} transition={{ease : "linear" , duration:0.4 , delay:0.4}}
          className="   mt-[17%] lg:mt-0 text-left text-lg font-[Poppins]  leading-6">
-          Welcome to our eco-conscious store, <br /> where sustainability meets
+          Welcome to our eco-conscious<br /> store,  where sustainability meets
           style! <br /> Discover a curated collection of eco <br /> friendly
           products
         </motion.p>
