@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.h1 {
-  cursor: pointer;
+
+.h1{
+ cursor: pointer;
 }
+
+
 @layer base {
     @font-face {
-      font-family: NewYork PERSONAL USE;
+      font-family: NewYork;
       font-style: normal;
       font-weight: 400;
       src: url(/Fonts/NewYork\ PERSONAL\ USE.ttf) format('truetype');
@@ -17,7 +20,7 @@
   
   @layer base {
     @font-face {
-      font-family: Poppins-Regular;
+      font-family: Poppins;
       font-style: normal;
       font-weight: 400;
       src: url(/Fonts/Poppins/Poppins-Regular.ttf) format('truetype');

@@ -7,7 +7,7 @@ function HeadArrow({title = "add", moveLeft, moveRight}) {
   return (
     <div>
       <div className="flex items-center justify-between">
-          <h1 className="lg:text-5xl text-4xl lg:ml-0 ml-3 font-[NewYork] text-[#838A60]">
+          <h1 className="lg:text-5xl text-4xl lg:ml-0 ml-3 font-[NewYork PERSONAL USE] text-[#838A60]">
            {title}
           </h1>
           <div className="arrow flex items-center gap-5 ">
