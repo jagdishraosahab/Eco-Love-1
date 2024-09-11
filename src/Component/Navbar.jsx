@@ -133,22 +133,22 @@ function Navbar() {
 
       {/* TOGGLE NAVBAR */}
       <div className="togglenav hidden z-30 w-full lg:w-[40%]  lg:block overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
-        <h1 className="h1 text-5xl font-[NewYork PERSONAL USE] font-semibold text-[#BA9659] text-center mb-5   ">
+        <h1 className="h1 text-5xl font-[NewYork] font-semibold text-[#BA9659] text-center mb-5   ">
           Welcome To Green City
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork PERSONAL USE]  uppercase mb-5 font-bold text-[#838A60]">
+        <h1 className="h1 text-4xl font-[NewYork]  uppercase mb-5 font-bold text-[#838A60]">
           Catalog
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork PERSONAL USE] uppercase mb-5 font-bold text-[#838A60]">
+        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
           Account
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork PERSONAL USE] uppercase mb-5 font-bold text-[#838A60]">
+        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
           Whislist
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork PERSONAL USE] uppercase mb-5 font-bold text-[#838A60]">
+        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
           Cart
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork PERSONAL USE] uppercase mb-5 font-bold text-[#838A60]">
+        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
           Contact
         </h1>
         <span

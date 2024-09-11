@@ -27,11 +27,11 @@ const Cart = () => {
   return (
     <div className="max-w-screen-xl min-h-screen mx-auto py-2 overflow-hidden">
       <div className="flex items-center gap-1">
-        <Link to="/" className="text-2xl font-[NewYork PERSONAL USE]">
+        <Link to="/" className="text-2xl font-[NewYork]">
           Home
         </Link>
         <IoIosArrowDropright size={"1.5em"} />
-        <span className="text-2xl font-[NewYork PERSONAL USE]">Cart</span>
+        <span className="text-2xl font-[NewYork]">Cart</span>
       </div>
 
       <h1 className="text-2xl font-[Poppins] font-semibold py-10 px-3">

@@ -8,7 +8,7 @@ function Subscribe() {
     <div className=" lg:mx-0 w-full mt-28">
       <div className="max-w-screen-xl mx-auto">
         <div className="w-full lg:h-[70vh] bg-[#838A60] rounded-xl ">
-          <h1 className="text-[9vw] lg:text-[7vw] font-[NewYork PERSONAL USE] uppercase text-white tracking-tight text-center pt-12">
+          <h1 className="text-[9vw] lg:text-[7vw] font-[NewYork] uppercase text-white tracking-tight text-center pt-12">
             Your first purchaes
           </h1>
           <div className="ctrldiv lg:ml-72 ">
@@ -17,7 +17,7 @@ function Subscribe() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
                 praesentium obcaecati magni!
               </p>
-              <h1 className="text-[9vw] lg:text-[7vw]  text-center  font-[NewYork PERSONAL USE] uppercase text-white tracking-tight">
+              <h1 className="text-[9vw] lg:text-[7vw]  text-center  font-[NewYork] uppercase text-white tracking-tight">
                 With <span className="inline-block text-[#BA9659]">10%</span> Off{" "}
               </h1>
             </div>

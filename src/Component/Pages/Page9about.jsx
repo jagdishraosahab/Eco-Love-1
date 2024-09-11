@@ -7,7 +7,7 @@ function Page9about() {
     <div className='w-full mt-28'>
         <div className='w-full lg:max-w-screen-xl mx-auto flex '>
          <div className='about px-3 lg:px-0 lg:w-[50%] h-[50vh] '>
-          <h1 className='font-[NewYork PERSONAL USE] text-6xl text-[#838A60]'>About Us</h1>
+          <h1 className='font-[NewYork] text-6xl text-[#838A60]'>About Us</h1>
           <p className=' font-[Poppins] lg:mr-16 mb-5 mt-5 tracking-tight text-left text-md font-bold leading-tight'> We offer an exclusive selection of products, where each products is a 
           small step toward taking care of our planet . Our store is not only 
           about goods , but about lifestyle . Together we create a positive imapct 
