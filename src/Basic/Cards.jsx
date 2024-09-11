@@ -37,18 +37,18 @@ function Cards({
         </Link>
 
         <div className="details   mt-5">
-          <h2 className="text-md font-[poppins] font-bold leading-none tracking-tight">
+          <h2 className="text-md font-[Poppins] font-bold leading-none tracking-tight">
             {productName}
           </h2>
 
-          <h4 className="text-md mt-2 font-bold font-[poppins]">${price}</h4>
+          <h4 className="text-md mt-2 font-bold font-[Poppins]">${price}</h4>
          {isCart ?  <button
             onClick={() => removeFromCart(productName)}
             className={`py-3 mt-4 px-[65px] rounded-xl ${
               isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
             }`}
           >
-          <h3 className="text-sm text-white font-[poppins] font-bold ">
+          <h3 className="text-sm text-white font-[Poppins] font-bold ">
             Remove
           </h3>
           </button> : 
@@ -59,7 +59,7 @@ function Cards({
               isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
             }`}
           >
-          <h3 className="text-sm text-white font-[poppins] font-bold ">
+          <h3 className="text-sm text-white font-[Poppins] font-bold ">
               Add To Cart
           </h3>
           </button>}

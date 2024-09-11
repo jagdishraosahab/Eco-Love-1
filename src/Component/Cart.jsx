@@ -34,7 +34,7 @@ const Cart = () => {
         <span className="text-2xl font-[NewYork]">Cart</span>
       </div>
 
-      <h1 className="text-2xl font-[poppins] font-semibold py-10 px-3">
+      <h1 className="text-2xl font-[Poppins] font-semibold py-10 px-3">
         Products
       </h1>
 
@@ -49,11 +49,11 @@ const Cart = () => {
               />
             </div>
             <div>
-              <h2 className="font-[poppins] capitalize font-bold text-xl">
+              <h2 className="font-[Poppins] capitalize font-bold text-xl">
                 {item.productName}
               </h2>
-              <p className="text-sm font-[poppins] text-gray-600">Description</p>
-              <p className="text-lg font-[poppins] text-gray-800">
+              <p className="text-sm font-[Poppins] text-gray-600">Description</p>
+              <p className="text-lg font-[Poppins] text-gray-800">
                 ${item.price}
               </p>
               <div className="flex items-center gap-3">
@@ -75,18 +75,18 @@ const Cart = () => {
       ))}
 
       <div className="w-full h-[5vh] bg-yellow-300">
-        <h1 className="text-xl font-[poppins] font-semibold px-3">
+        <h1 className="text-xl font-[Poppins] font-semibold px-3">
           Total Price: ${calculateTotalPrice()}
         </h1>
         <div className="flex gap-5 py-3">
           <Link
-            className="text-xl font-[poppins] font-semibold px-3 bg-teal-300  py-2"
+            className="text-xl font-[Poppins] font-semibold px-3 bg-teal-300  py-2"
             to="/checkout"
           >
             Checkout
           </Link>
           <Link
-            className="text-xl font-[poppins] font-semibold px-3 bg-teal-300  py-2 "
+            className="text-xl font-[Poppins] font-semibold px-3 bg-teal-300  py-2 "
             to="/"
           >
             Continue Shopping

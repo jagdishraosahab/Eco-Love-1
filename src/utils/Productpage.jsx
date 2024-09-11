@@ -63,7 +63,7 @@ function Productpage() {
 
           <div className="flex items-center gap-5 mb-5">
             <button className="py-3 mt-4 px-[65px] rounded-xl bg-[#838A60]">
-              <h3 className="text-sm text-white font-[poppins] font-bold ">
+              <h3 className="text-sm text-white font-[Poppins] font-bold ">
                 Add To Cart
               </h3>
             </button>

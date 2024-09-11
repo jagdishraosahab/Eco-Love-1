@@ -34,7 +34,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]    lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
             <button className=" px-12 py-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
                 Organic Products
               </h3>
             </button>
@@ -47,7 +47,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]    lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
             <button className="px-12 p-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
                 Hygine Products
               </h3>
             </button>
@@ -60,7 +60,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]   lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
             <button className="px-12 py-[2.2vh] lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
                Shopper
               </h3>
             </button>
@@ -73,7 +73,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]  lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
             <button className="px-12 py-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
                 Eco Dishes
               </h3>
             </button>
@@ -86,7 +86,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]  lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0  border-[1px] border-[#838A60]"
           >
             <button className="px-12 p-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
               Gift Sets
               </h3>
             </button>
@@ -99,7 +99,7 @@ function Categories() {
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]  lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
             <button className="px-12 py-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
-              <h3 className="text-xl text-white font-[poppins] tracking-tight leading-none ">
+              <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
                For Home
               </h3>
             </button>
