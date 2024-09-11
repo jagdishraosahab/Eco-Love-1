@@ -7,7 +7,7 @@
 }
 @layer base {
     @font-face {
-      font-family: NewYork;
+      font-family: NewYork PERSONAL USE;
       font-style: normal;
       font-weight: 400;
       src: url(/Fonts/NewYork\ PERSONAL\ USE.ttf) format('truetype');
@@ -17,7 +17,7 @@
   
   @layer base {
     @font-face {
-      font-family: Poppins;
+      font-family: Poppins-Regular;
       font-style: normal;
       font-weight: 400;
       src: url(/Fonts/Poppins/Poppins-Regular.ttf) format('truetype');
