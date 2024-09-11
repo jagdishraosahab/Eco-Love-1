@@ -7,16 +7,20 @@ function Page1() {
   
   return (
     <div className="max-w-screen-xl relative select-none p-5  mx-auto">
-      <motion.div animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4}}  className="lg:mt-5 lg:relative lg:w-full lg:h-[13vh]    flex items-center justify-between">
-        <h1  className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] ">
+      <div   className="lg:mt-5 lg:relative lg:w-full lg:h-[13vh]    flex items-center justify-between">
+        <motion.h1 animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4}} className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] ">
           Green City Style
-        </h1>
-
-        <Link  to="/catlog" className="  absolute top-[80%] left-[1vh] mr-2 lg:mr-0 lg:top-[9%]  lg:left-[67%] lg:block lg:py-4 lg:px-[17vh] py-2 px-32  bg-[#838A60] rounded-xl text-lg lg:text-xl font-[Poppins] text-center text-white">
+        </motion.h1>
+<motion.div
+           animate={{y:0}} initial={{y:100}} transition={{ease : "linear" , duration:0.4 , delay:0.4}}
+>
+  <Link  to="/catlog" className="  absolute top-[80%] left-[1vh] mr-2 lg:mr-0 lg:top-[9%]  lg:left-[67%] lg:block lg:py-4 lg:px-[17vh] py-2 px-32  bg-[#838A60] rounded-xl text-lg lg:text-xl font-[Poppins] text-center text-white">
           Go To Catalog
         </Link >
+</motion.div>
+        
 
-      </motion.div>
+      </div>
       <div    className=" lg:flex  items-center justify-between">
         <motion.p animate={{y:0 , opacity:1}}  initial={{y:100 , opacity:0}} transition={{ease : "linear" , duration:0.4 , delay:0.4}}
          className="   mt-[17%] lg:mt-0 text-left text-lg font-[Poppins]  leading-6">
