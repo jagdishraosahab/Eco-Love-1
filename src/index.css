@@ -2,17 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.h1{
- cursor: pointer;
+.h1 {
+  cursor: pointer;
 }
-
-@font-face {
+@layer base {
+  @font-face {
     font-family: NewYork;
-    src: url(/Eco/public/NewYork\ PERSONAL\ USE.ttf);
+    src: url(/Eco/public/Fonts/Poppins/NewYork\ PERSONAL\ USE.ttf );
+    font-display: swap;
+  }
 }
 
-@font-face {
-    font-family:Poppins ;
-    src: url(/Eco/public/Poppins/Poppins-Medium.ttf);
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: Poppins;
+    src: url(/Eco/public/Fonts/Poppins/Poppins-Regular.ttf);
+  }
 }
