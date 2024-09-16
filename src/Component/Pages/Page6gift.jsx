@@ -1,16 +1,34 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import HeadArrow from "../../Basic/HeadArrow";
 
-import Giftcards from "../../Basic/Giftcards";
+
 import { ProductContext } from "../Context";
+import Cards from "../../Basic/Cards";
 
 function Page6gift() {
 
    
 
     const {product} = useContext(ProductContext)
-    console.log(product[2].page6
-    )
+    const boxRef = useRef(null);
+
+    function moveLeft() {
+      if (boxRef.current) {
+        boxRef.current.scrollTo({
+          left: boxRef.current.scrollLeft - 200,
+          behavior: "smooth",
+        }); // scrolls left by 200px
+      }
+    }
+    // Function to move right
+    function moveRight() {
+      if (boxRef.current) {
+        boxRef.current.scrollTo({
+          left: boxRef.current.scrollLeft + 200,
+          behavior: "smooth",
+        });
+      }
+    }
     
    
 
@@ -18,10 +36,12 @@ function Page6gift() {
     <div className="w-full mt-16 lg:mt-28">
       <div className="max-w-screen-xl   mx-auto">
         <div>
-          <HeadArrow title={"Gift Sets"} />
+        <HeadArrow title={"Gift Sets"} moveLeft={moveLeft} moveRight={moveRight} />
         </div>
-        <div className="giftctrl w-full overflow-hidden overflow-x-scroll flex gap- lg:gap-20">
-        { product[2].page6.map((items, index)=> <Giftcards key={index} index={index} giftItems={items}   />)}
+        <div 
+        ref={boxRef}
+        className="giftctrl w-full overflow-hidden overflow-x-scroll flex  lg:gap-20">
+        { product[2].page6.map((items, index)=> <Cards key={index} index={index} items={items}   />)}
         </div>
       </div>
     </div>

@@ -2,29 +2,25 @@ import React, { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../Component/Context";
+import { Button } from "../utils/Button";
 
-function Cards({
-  giftItems,
-  items = "nothing",
-  clickHandler = "nothing",
-  clickHandler2 = "nothing",
-  index ,
-}) {
+function Cards({ items }) {
   const { img, productName, price, isAdded, isCart } = items;
+  // console.log(isCart)
 
-  const { addToCart , removeFromCart} =   useContext(ProductContext)
+  const { addToCart, removeFromCart } = useContext(ProductContext);
+
   return (
     <>
-      <div className="lg:w-[20%]   w-full relative shrink-0">
-        <Link to="/productpage:id">
-          <div className="card bg-red-300 lg:w-full w-full  lg:overflow-hidden h-full lg:h-[45vh] lg:mt-10  border-[1px] border-[#838A60] rounded-md lg:rounded-lg ">
+      <div className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] flex flex-shrink-0 flex-col relative">
+        <Link to={`/productpage/${productName}`}>
+          <div className="card h-[25vh] lg:h-[45vh] bg-purple-600 rounded-lg overflow-hidden border-[1px] border-[#838A60]">
             <img
               className="lg:w-full lg:h-full w-full h-full   object-cover  "
               src={img}
               alt=""
             />
             <button
-              onClick={() => clickHandler(index)}
               className={`lg:w-[35px] lg:h-[35px] w-[30px] h-[30px]   top-[2%] lg:top-[9.5%]  rounded-full ${
                 isAdded === true ? "bg-red-400" : " bg-slate-50"
               } left-[79%] absolute `}
@@ -42,27 +38,8 @@ function Cards({
           </h2>
 
           <h4 className="text-md mt-2 font-bold font-[Poppins]">${price}</h4>
-         {isCart ?  <button
-            onClick={() => removeFromCart(productName)}
-            className={`py-3 mt-4 px-[65px] rounded-xl ${
-              isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
-            }`}
-          >
-          <h3 className="text-sm text-white font-[Poppins] font-bold ">
-            Remove
-          </h3>
-          </button> : 
-          
-          <button
-            onClick={() => addToCart(index)}
-            className={`py-3 mt-4 px-[65px] rounded-xl ${
-              isCart ? "bg-[#838A60]" : "bg-[#BA9659]"
-            }`}
-          >
-          <h3 className="text-sm text-white font-[Poppins] font-bold ">
-              Add To Cart
-          </h3>
-          </button>}
+
+          <Button isCart={isCart} productName={productName} />
         </div>
       </div>
     </>
@@ -70,6 +47,3 @@ function Cards({
 }
 
 export default Cards;
-
-{
-}

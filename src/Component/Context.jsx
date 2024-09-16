@@ -37,7 +37,7 @@ const Context = (props) => {
       ],
     },
     {
-      page5: [
+     page5: [
         {img:"https://img.freepik.com/free-photo/assortment-tumbler-with-copy-space_23-2149029272.jpg?t=st=1714711812~exp=1714715412~hmac=2dadcbf2ac7acc2498d081f154d5d44fa70119c8502adf75b672c1f2ca486569&w=996" , productName:"Hot Thermal Botttle" , price:"6" , isAdded: false},
         {img:"https://img.freepik.com/free-photo/eco-friendly-brown-cups-leaves_23-2148723789.jpg?t=st=1714742742~exp=1714746342~hmac=a90028f67fa23e207e851b1ed95ea62901dca0ce5009cf0be94ceafc765a6b2a&w=1060" , productName:"Organic Bamboo Cup" , price:"4" , isAdded: false},
         {img:"https://img.freepik.com/free-photo/eco-products-arrangement-high-angle_23-2149413871.jpg?t=st=1714742916~exp=1714746516~hmac=7566cdbf703b80c4928a92f0e5f0d6a0e6afec75411e6df1e7a96fe0dc120781&w=360" , productName:"Wooden Toothbrush" , price:"7" , isAdded: false},
@@ -72,90 +72,53 @@ const Context = (props) => {
 
   const [cartProduct, setCartProduct] = useState([]);
 
-  const addToCart = (index) => {
-    const addedproduct = product[0].page4[index];
+const flatMapProduct = product.reduce((acc, product) =>{
+ const itmes = Object.keys(product).filter(keys => keys.startsWith('page')).reduce((acc, key)=>acc.concat(product[key]),[])
+ return acc.concat(itmes)
+},[])
 
-    setCartProduct((prevCart) => [...prevCart, addedproduct]);
-    const updatedProduct = [...product];
-
-    updatedProduct[0] = {
-      ...updatedProduct[0],
-      page4: updatedProduct[0].page4.map((item, i) =>
-        i === index
-          ? { ...item,  isCart: true }
-          : item
-      ),
-    };
-    setProduct(updatedProduct);
-  };
 
   
-  const addToCartPgae5 = (index) => {
-    const addedproduct = product[1].page5[index];
+  const addToCart = (index) => {
+    console.log(index)
+    const addedProduct = flatMapProduct.filter((item) => item.productName === index);
 
-    setCartProduct((prevCart) => [...prevCart, addedproduct]);
-    const updatedProduct = [...product];
+    setCartProduct((prevCart) => [...prevCart , ...addedProduct]);
 
-    updatedProduct[1] = {
-      ...updatedProduct[1],
-      page5: updatedProduct[1].page5.map((item, i) =>
-        i === index
-          ? { ...item,  isAdded: true }
-          : item
-      ),
-    };
-    setProduct(updatedProduct);
+    const updatedProduct = product.map((obj) => {
+     
+      const updatedPages = Object.keys(obj).reduce((acc, key) => {
+        acc[key] = obj[key].map((item) =>
+          item.productName === index ? { ...item, isCart: true } : item
+        );
+        return acc;
+      }, {});
+      return updatedPages;
+    });
+  
+    setProduct(updatedProduct)
   };
-
-  const addToCartPgae6 = (index) => {
-    const addedproduct = product[2].page6[index];
-
-    setCartProduct((prevCart) => [...prevCart, addedproduct]);
-    const updatedProduct = [...product];
-
-    updatedProduct[2] = {
-      ...updatedProduct[2],
-      page6: updatedProduct[2].page6.map((item, i) =>
-        i === index
-          ? { ...item,  isCart: true }
-          : item
-      ),
-    };
-    setProduct(updatedProduct);
-  };
-
-  const addToCartPgae7 = (index) => {
-    const addedproduct = product[3].page7[index];
-
-    setCartProduct((prevCart) => [...prevCart, addedproduct]);
-    const updatedProduct = [...product];
-
-    updatedProduct[3] = {
-      ...updatedProduct[3],
-      page7: updatedProduct[3].page7.map((item, i) =>
-        i === index
-          ? { ...item, isCart: true }
-          : item
-      ),
-    };
-    setProduct(updatedProduct);
-  };
+  console.log(cartProduct)
+  
+  
 
   const removeFromCart = (name) => {
-    // Filter out the item from the cart based on the index
-    const updatedCart = cartProduct.filter((item, i) => item.productName !== name);
+    
+    const updatedCart = cartProduct.flat().filter((item, i) => item.productName !== name);
+    console.log(updatedCart)
     setCartProduct(updatedCart);
   
     // Update the 'isCart' value to false for the item being removed
-    const updatedProduct = [...product];
-    updatedProduct[0] = {
-      ...updatedProduct[0],
-      page4: updatedProduct[0].page4.map((item, i) =>
-        i === index
-          ? { ...item,  isCart: false }
-          : item
-      ),
-    };
+    const updatedProduct = product.map((obj) => {
+     
+      const updatedPages = Object.keys(obj).reduce((acc, key) => {
+        acc[key] = obj[key].map((item) =>
+          item.productName === index ? { ...item, isCart: false } : item
+        );
+        return acc;
+      }, {});
+      return updatedPages;
+    });
   
     setProduct(updatedProduct);
   };
@@ -182,7 +145,7 @@ const Context = (props) => {
   
   return (
     <ProductContext.Provider
-      value={{ product, setProduct, addToCart, cartProduct , removeFromCart , addToCartPgae5 ,removeFromCartPage5 , addToCartPgae6 , addToCartPgae7}}
+      value={{ product, setProduct, addToCart, cartProduct , removeFromCart,removeFromCartPage5 ,flatMapProduct }}
     >
       {props.children}
     </ProductContext.Provider>

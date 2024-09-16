@@ -1,55 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import HeadArrow from "../../Basic/HeadArrow";
 import Cards from "../../Basic/Cards";
 import { ProductContext } from "../Context";
 
 function Page4() {
-
-  const {product} = useContext(ProductContext)
-
-  // console.log(product[0])
-
-  const productsFromContext = product[0]
-
-  
-
-  var data = [
-    {
-      img: "https://img.freepik.com/premium-photo/reusable-shopping-bags-brown-wall-zero-waste-concept-no-plastic_136404-1061.jpg?w=360",
-      productName: "Organic Bag",
-      Price: "7",
-      isAdded: false,
-      isCart: false,
-    },
-    {
-      img: "https://img.freepik.com/premium-photo/high-angle-view-food-table_1048944-28128384.jpg?w=996",
-      productName: "organic plates",
-      Price: "8",
-      isAdded: false,
-      isCart: false,
-    },
-    {
-      img: "https://img.freepik.com/free-photo/assortment-different-glass-tumblers_23-2149029223.jpg?t=st=1714548318~exp=1714551918~hmac=8306eba747c61bf945b01b88e0eac1ab6bce07e87cbc51590af5adb97ec5f6f1&w=360",
-      productName: "reusable glass of drink bottle",
-      Price: "25",
-      isAdded: false,
-      isCart: false,
-    },
-    {
-      img: "https://img.freepik.com/free-photo/tied-bamboo-organic-straws-leaves-copy-space_23-2148768602.jpg?t=st=1714548160~exp=1714551760~hmac=c2519bff9af182bb8668976cddf9a3ea71c80d0e0b68b08e47abc25734376610&w=996",
-      productName: "organic bamboo straw for drink",
-      Price: "5",
-      isAdded: false,
-      isCart: false,
-    },
- 
-  ];
-
-
-  // console.log(productFormContext)
-  
-
-  const [products, setProducts] = useState(data);
+  const { product } = useContext(ProductContext);
+  const [products, setProducts] = useState(product);
 
   function clickHandler(index) {
     setProducts((prev) => {
@@ -60,43 +16,40 @@ function Page4() {
     });
   }
 
+  const boxRef = useRef(null);
 
   function moveLeft() {
-    var box = document.querySelector(".ctrl");
-    box.scrollLeft -= 200;
+    if (boxRef.current) {
+      boxRef.current.scrollTo({
+        left: boxRef.current.scrollLeft - 200,
+        behavior: "smooth",
+      }); // scrolls left by 200px
+    }
   }
+  // Function to move right
   function moveRight() {
-    var box = document.querySelector(".ctrl");
-    box.scrollLeft += 200;
+    if (boxRef.current) {
+      boxRef.current.scrollTo({
+        left: boxRef.current.scrollLeft + 200,
+        behavior: "smooth",
+      });
+    }
   }
   return (
-    <div className="prodcut hidden lg:block w-full lg:overflow-x-hidden ">
-      <div className="lg:max-w-screen-xl w-full  lg:mt-32  mt-10  mx-auto">
-        <div className="">
-          <HeadArrow
-            title={"Popular Products"}
-            moveLeft={moveLeft}
-            moveRight={moveRight}
-          />
-        </div>
-        <div className="ctrl lg:w-full lg:h-full    w-[45%] h-[30vh] flex   gap-5 lg:gap-[80px] flex-shrink-0 overflow-x-scroll transition-all duration-1000 ml-3 lg:ml-0 mt-6 lg:mt-0 ">
-          {product[0].page4.map((items, index) => (
-            <Cards
-              items={items}
-              key={index}
-              index={index}
-              clickHandler={clickHandler}
-            
-            />
-          ))}
-
-          
-        </div>
-      </div>
+    <div className='w-full mt-16 lg:mt-28'>
+    <div className='max-w-screen-xl  mx-auto '>
+     <div className='heading&arrow   w-full'>
+     <HeadArrow title={"Popular Products"} moveLeft={moveLeft} moveRight={moveRight} />
+     </div>
+     <div 
+     ref={boxRef}
+     className='newproduct w-full lg:flex-nowrap lg:mx-0  mx-[1.3vh]   flex  lg:gap-20 overflow-x-scroll mt-10'>
+     {product[0].page4.map((items, index)=> <Cards  index={index} key={index} items={items} />)}
+     </div>
     </div>
+    
+</div>
   );
 }
 
 export default Page4;
-
-

@@ -1,35 +1,56 @@
-import React from "react";
+import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
+import {
+  animate,
+  easeIn,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import HeadArrow from "../../Basic/HeadArrow";
 function Categories() {
   // const [scrollPosition, setScrollPosition] = useState(0);
-  function moveLeft() {
-    var box = document.querySelector(".boxctrl");
-    box.scrollLeft -= 200;
-  }
-  function moveRight() {
-    var box = document.querySelector(".boxctrl");
-    box.scrollLeft += 200;
-  }
+  const boxRef = useRef(null);
 
-  
-  
+  function moveLeft() {
+    if (boxRef.current) {
+      boxRef.current.scrollTo({
+        left: boxRef.current.scrollLeft - 200,
+        behavior: "smooth",
+      }); // scrolls left by 200px
+    }
+  }
+    // Function to move right
+  function moveRight() {
+    if (boxRef.current) {
+      boxRef.current.scrollTo({
+        left: boxRef.current.scrollLeft + 200,
+        behavior: "smooth",
+      });
+    }
+  }
 
   return (
     <div className="w-full">
-      <motion.div 
-        animate={{x:0}} initial={{X:-500}} transition={{ease : "linear" , duration:0.9 }}
-      
-      className=" w-[100%] lg:max-w-screen-xl mt-16   mx-auto">
-        <HeadArrow title={"Categories"} moveLeft={moveLeft} moveRight={moveRight} />
-        <motion.div 
-        className="boxctrl transition-all duration-500 ml-3 lg:mx-0 overflow-x-scroll overflow-hidden flex flex-wrap lg:flex-nowrap lg:flex gap-10 lg:w-full w-full    mt-10">
+      <motion.div
+        transition={{ ease: "linear", duration: 0.9 }}
+        className=" w-[100%] lg:max-w-screen-xl mt-16   mx-auto"
+      >
+        <HeadArrow
+          title={"Categories"}
+          moveLeft={moveLeft}
+          moveRight={moveRight}
+        />
+        <motion.div
+          ref={boxRef}
+          className="boxctrl transition-all duration-500 ml-3 lg:mx-0 overflow-x-scroll overflow-hidden flex flex-wrap lg:flex-nowrap lg:flex gap-10 lg:w-full w-full    mt-10"
+        >
           <div
             style={{
               backgroundImage: `url('https://static.toiimg.com/thumb/msid-107666466,imgsize-31650,width-400,resizemode-4/107666466.jpg')`,
               backgroundSize: "cover",
-              backgroundPosition: "center"
+              backgroundPosition: "center",
             }}
             className="box flex items-end overflow-hidden bg-contain w-[42%] h-[25vh]    lg:w-[31%] lg:h-[35vh] rounded-lg flex-shrink-0 border-[1px] border-[#838A60]"
           >
@@ -61,7 +82,7 @@ function Categories() {
           >
             <button className="px-12 py-[2.2vh] lg:p-2 rounded-tr-lg bg-[#838A60]">
               <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
-               Shopper
+                Shopper
               </h3>
             </button>
           </div>
@@ -87,7 +108,7 @@ function Categories() {
           >
             <button className="px-12 p-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
               <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
-              Gift Sets
+                Gift Sets
               </h3>
             </button>
           </div>
@@ -100,7 +121,7 @@ function Categories() {
           >
             <button className="px-12 py-2 lg:p-2 rounded-tr-lg bg-[#838A60]">
               <h3 className="text-xl text-white font-[Poppins] tracking-tight leading-none ">
-               For Home
+                For Home
               </h3>
             </button>
           </div>
