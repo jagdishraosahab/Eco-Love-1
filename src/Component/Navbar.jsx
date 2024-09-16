@@ -140,9 +140,10 @@ function Navbar() {
 
           <NavLink className="hidden lg:block">+00356 963 23 25</NavLink>
         </div>
-        <div className="center ml-7 lg:ml-0 flex items-center flex-col">
+        <Link to='/'
+        className="center ml-7 lg:ml-0 flex items-center flex-col">
           <ImLeaf color="green" /> <h3 className="text-xs">Green City</h3>
-        </div>
+        </Link>
         <div className="rightside flex items-center gap-14  ">
           <NavLink onClick={searchClick} className="hidden lg:block">
             Search

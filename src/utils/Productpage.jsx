@@ -25,31 +25,31 @@ function Productpage() {
             <div className="PARENTDIV w-full h-full  lg:flex p-5">
               <div className="LEFTPARENT h-[70vh] lg:h-[100vh]  lg:w-[50%] flex gap-5">
                 <div className="w-[35vh] h-[10vh] lg:h-[100vh] lg:w-[25%]">
-                  <div className="w-full h-[20vh] border-2 border-[#838A60] lg:overflow-hidden lg:h-[30vh] mb-5  rounded-xl">
+                  <div className="w-full h-[20vh] border-2 border-[#838A60] lg:overflow-hidden lg:h-[30vh] mb-5 overflow-hidden  rounded-xl">
                     <img
-                      className="w-full h-full object-cover rounded-xle"
+                      className="w-full h-full object-cover "
                       src="https://img.freepik.com/premium-photo/soda-jar-spray-bottle-vinegar-lemon-wooden-brush-sponge-beige-background-copy-space_531397-1765.jpg?w=996"
                       alt=""
                     />
                   </div>
-                  <div className="w-full border-2 border-[#838A60] lg:overflow-hidden   h-[20vh] lg:h-[30vh] mb-5  rounded-xl">
+                  <div className="w-full border-2 border-[#838A60] lg:overflow-hidden overflow-hidden  h-[20vh] lg:h-[30vh] mb-5  rounded-xl">
                     <img
-                      className="w-full h-full object-cover rounded-xle"
+                      className="w-full h-full object-cover "
                       src="https://img.freepik.com/premium-psd/top-view-mock-up-with-sweet-croissants_23-2148682277.jpg?w=996"
                       alt=""
                     />
                   </div>
-                  <div className="w-full  border-2 border-[#838A60] lg:overflow-hidden  h-[20vh] lg:h-[30vh]  rounded-xl">
+                  <div className="w-full  border-2 border-[#838A60] lg:overflow-hidden overflow-hidden h-[20vh] lg:h-[30vh]  rounded-xl">
                     <img
-                      className="w-full h-full object-cover rounded-xle"
+                      className="w-full h-full object-cover "
                       src="https://img.freepik.com/premium-psd/top-view-mock-up-with-pastries_23-2148682276.jpg?w=740"
                       alt=""
                     />
                   </div>
                 </div>
-                <div className="w-[50vh] h-[65vh] lg:h-[96vh] lg:w-[70%] rounded-xl  border-2 border-[#838A60]">
+                <div className="w-[50vh] h-[65vh] lg:h-[96vh] lg:w-[70%] rounded-xl overflow-hidden border-2 border-[#838A60]">
                   <img
-                    className="w-full h-full rounded-xl object-cover"
+                    className="w-full h-full  object-cover"
                     src={item.img}
                     alt=""
                   />
