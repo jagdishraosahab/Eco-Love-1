@@ -22,9 +22,9 @@ function Subscribe() {
               </h1>
             </div>
             <div className="form mt-20 px-1 lg:px-0 lg:mt-10 ">
-              <form onSubmit={(Event)=>Event.preventDefault()} ction="">
-                <input className="px-28 py-3 rounded-xl mb-3 border-[1px] border-white bg-[#838A60] text-white" type="text" placeholder="Enter Your Email" />
-                <input className="px-[20vh] lg:px-28 py-3 mb-2 rounded-xl lg:ml-10 bg-[#BA9659]" type="submit" />
+              <form onSubmit={(Event)=>Event.preventDefault()} action="">
+                <input className="px-28 py-3 rounded-xl mb-3 border-[1px] border-white bg-[#838A60] text-white outline-none" type="text" placeholder="Enter Your Email" />
+                <input className="px-[20vh] lg:px-28 py-3 mb-2 rounded-xl lg:ml-10 bg-[#BA9659] cursor-pointer" type="submit" />
               </form>
 
             </div>

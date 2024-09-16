@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoChevronDown } from "react-icons/io5";
 import { ImLeaf } from "react-icons/im";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { motion, stagger } from "framer-motion";
 import { ProductContext } from "./Context";
+import _ from "lodash"; // For debouncing
 
 function Navbar() {
   const [isOpen, setisOpen] = useState(true);
@@ -17,38 +18,23 @@ function Navbar() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   // console.log(value)
 
-  const { cartProduct, product } = useContext(ProductContext);
-  // console.log(product)
+  const { cartProduct, product, flatMapProduct } = useContext(ProductContext);
 
-  //  const FindBySearch = (value)=>{
-  //    const productRemaining = product.filter((product) => product.name.toLowerCase().includes(value.toLowerCase()))
-  //  console.log(productRemaining)
-  //  }
-
- 
-
-
-  const FindBySearch = (value) => {
-    const productRemaining = product[0].page4
-      .filter((prod) => prod.productName.toLowerCase().includes(value.toLowerCase()));
-    setFilteredProducts(productRemaining);
-  };
+  const findBySearch = _.debounce((value) => {
+    if (!product || product.length === 0) return; // Handle empty or undefined products
+    const filtered = flatMapProduct.filter((prod) =>
+      prod.productName.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredProducts(filtered);
+  }, 300);
 
   // Handle search input change
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchProduct(value);
 
-
-    FindBySearch(value); 
+    findBySearch(value);
   };
-
-
-//   useEffect(()=>{
-// handleSearch()
-//   },[searchProduct])
-  // setCart(cartProduct.length)
-  // console.log()
 
   const container = {
     show: {
@@ -58,22 +44,21 @@ function Navbar() {
     },
   };
 
-  const { contextSafe } = useGSAP();
-  const tl = gsap.timeline();
-
-  const menuClick = contextSafe(function () {
-    tl.to(".togglenav", {
+  const openMenu = () => {
+    gsap.to(".togglenav", {
       left: 0,
       duration: 0.5,
     });
-  });
+  };
 
-  const closeClick = contextSafe(function () {
-    tl.to(".togglenav", {
-      left: -700,
+  const closeMenu = () => {
+    gsap.to(".togglenav", {
+      left: "-100%", // Use percentage for better responsiveness
       duration: 0.2,
     });
-  });
+  };
+
+  const { contextSafe } = useGSAP();
 
   const searchClick = contextSafe(function () {
     if (isOpen) {
@@ -89,14 +74,10 @@ function Navbar() {
     setisOpen(!isOpen);
   });
 
-  //  const upDatedCart = ()=>{
-  //          iscart([...cart , cart+1])
-  //  }
-
   return (
-    <div className="   py-7 z-[999]  w-full">
-       {/* SEARCH DIV */}
-       <div className="ToggleSearch hidden absolute top-[-100%] left-[40%] lg:flex">
+    <div className=" py-7   w-full">
+      {/* SEARCH DIV */}
+      <div className="ToggleSearch hidden absolute top-[-100%] left-[40%] lg:flex">
         <input
           className="px-10 mr-5 py-3 rounded-lg bg-[#838A60] text-white outline-none"
           placeholder="Search Products"
@@ -116,10 +97,18 @@ function Navbar() {
             filteredProducts.map((prod, index) => (
               <div key={index} className="flex  gap-5">
                 <div className="w-[30%] h-[80%]">
-                  <img w-full h-full src={prod.img} alt={prod.productName} className="w-full h-full object-cover"/>
+                  <img
+                    w-full
+                    h-full
+                    src={prod.img}
+                    alt={prod.productName}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="">
-                  <h1 className="text-2xl font-[Poppins] text-black">{prod.productName}</h1>
+                  <h1 className="text-2xl font-[Poppins] text-black">
+                    {prod.productName}
+                  </h1>
                   <p className="text-xl text-gray-700">${prod.price}</p>
                 </div>
               </div>
@@ -135,11 +124,11 @@ function Navbar() {
         initial={{ y: -100 }}
         variants={container}
         transition={{ ease: "linear", duration: 0.4 }}
-        className="px-3 lg:px-0 container max-w-screen-xl mx-auto flex itmes-center  justify-between "
+        className="px-3 lg:px-0 container max-w-screen-xl mx-auto flex itmes-center   justify-between "
       >
         <div className="leftside flex items-center  gap-20 text-black ">
-          <NavLink onClick={menuClick}>
-            <RxHamburgerMenu />
+          <NavLink>
+            <RxHamburgerMenu onClick={() => openMenu()} />
           </NavLink>
 
           <NavLink to="/catlog" className="hidden lg:flex  items-center">
@@ -185,27 +174,39 @@ function Navbar() {
       />
 
       {/* TOGGLE NAVBAR */}
-      <div className="togglenav hidden z-30 w-full lg:w-[40%]  lg:block overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
+      <div className="togglenav  flex flex-col z-[999] w-full lg:w-[40%]   overflow-x-hidden backdrop-sepia-0 h-[100%]  top-[0] lg:left-[-40%] absolute bg-[#F4EBDA] px-[40px] py-[50px]">
         <h1 className="h1 text-5xl font-[NewYork] font-semibold text-[#BA9659] text-center mb-5   ">
           Welcome To Green City
         </h1>
-        <h1 className="h1 text-4xl font-[NewYork]  uppercase mb-5 font-bold text-[#838A60]">
+        <Link
+          to="/catlog"
+          className="h1 text-4xl font-[NewYork]  uppercase mb-5 font-bold text-[#838A60]"
+        >
           Catalog
-        </h1>
-        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
+        </Link>
+        <Link
+          to="/account"
+          className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]"
+        >
           Account
-        </h1>
-        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
+        </Link>
+        <Link
+          to="/whishlist"
+          className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]"
+        >
           Whislist
-        </h1>
-        <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
+        </Link>
+        <Link
+          to="/cart"
+          className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]"
+        >
           Cart
-        </h1>
+        </Link>
         <h1 className="h1 text-4xl font-[NewYork] uppercase mb-5 font-bold text-[#838A60]">
           Contact
         </h1>
         <span
-          onClick={closeClick}
+          onClick={closeMenu}
           className="block absolute top-[2%] left-[90%]"
         >
           <RiCloseLargeLine size="2em" />

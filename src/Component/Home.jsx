@@ -15,23 +15,19 @@ import Footer from "./Pages/Footer";
 
 
 function Home() {
-  const {cart , setCart} = useState(0)
+
   
-  function upDateCart(){
-    setCart(cart)
-     console.log(cart);
-  }
 
 
   return (
     <div className="home">
       
-        <Navbar cart={cart} />
+        <Navbar />
         <Page1 />
         <Page2 />
         <Page3/>
         <Page4 />
-        <Page5 upDateCart={upDateCart} />
+        <Page5 />
         <Page6gift/>
         <Subscribe />
         <Page6sale />

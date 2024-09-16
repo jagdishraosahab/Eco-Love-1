@@ -14,7 +14,7 @@ function Cards({ items }) {
     <>
       <div className="w-[40%] mx-3 lg:mx-0 lg:w-[20%] flex flex-shrink-0 flex-col relative">
         <Link to={`/productpage/${productName}`}>
-          <div className="card h-[25vh] lg:h-[45vh] bg-purple-600 rounded-lg overflow-hidden border-[1px] border-[#838A60]">
+          <div className="card h-[25vh] lg:h-[45vh]  rounded-lg overflow-hidden border-[1px] border-[#838A60]">
             <img
               className="lg:w-full lg:h-full w-full h-full   object-cover  "
               src={img}

@@ -8,6 +8,9 @@
     display:none ;
 }
 
+.togglenav {
+    left: -100%; /* Ensure it starts off-screen */
+  }
 
 
 .giftctrl::-webkit-scrollbar{

@@ -6,7 +6,7 @@ function Page1() {
 
   
   return (
-    <div className="max-w-screen-xl relative z-[2] p-5   mx-auto">
+    <div className="max-w-screen-xl relative  p-5   mx-auto">
       <div   className="lg:mt-5 lg:relative lg:w-full lg:h-[13vh]    flex items-center justify-between">
         <motion.h1 animate={{y:0 , opacity:1}} initial={{y:100 , opacity:0}}  transition={{ease : "linear" , duration:0.3 , delay:0.3}} className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] ">
           Green City Style

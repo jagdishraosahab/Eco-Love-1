@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "../Component/Navbar";
 import { ProductContext } from "../Component/Context";
 import { useParams } from "react-router-dom";
 
 function Productpage() {
+
+    // Scroll to top when the component mounts
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [])
   const param = useParams();
 
   const { flatMapProduct, product } = useContext(ProductContext);
 
-  return (
+  return  (
     <div className="w-full min-h-[100vh] bg-[#F4EBDA]">
       <Navbar />
       {flatMapProduct.map((item, index) =>
