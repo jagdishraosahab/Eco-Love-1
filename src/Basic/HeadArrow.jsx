@@ -20,7 +20,6 @@ function HeadArrow({title = "add", moveLeft, moveRight}) {
             onClick={moveRight} 
             >
               <span className="lg:w-[35px] lg:h-[35px] rounded-lg border-[1px] hidden   border-[#838A60] lg:flex items-center justify-center">
-                {" "}
                 <FaAngleRight size="1.3em" />
               </span>
             </button>
