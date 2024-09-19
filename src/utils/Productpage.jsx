@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import Navbar from "../Component/Navbar";
 import { ProductContext } from "../Component/Context";
 import { useParams } from "react-router-dom";
+import { Button } from "./Button";
+import { ImTab } from "react-icons/im";
 
 function Productpage() {
 
@@ -82,11 +84,7 @@ function Productpage() {
                 </div>
 
                 <div className="flex items-center gap-5 mb-5">
-                  <button className="py-3 mt-4 px-[65px] rounded-xl bg-[#838A60]">
-                    <h3 className="text-sm text-white font-[Poppins] font-bold ">
-                      Add To Cart
-                    </h3>
-                  </button>
+                 <Button isCart={item.isCart} productName={item.productName} />
                   <button>Heart</button>
                 </div>
                 <a className="text-md font-medium underline" href="/catlog">

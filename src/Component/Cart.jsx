@@ -2,13 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropright } from "react-icons/io";
 import { ProductContext } from "./Context";
-import { RiAddCircleLine } from "react-icons/ri";
-import { FiMinusCircle } from "react-icons/fi";
+
 import MoodyCards from "../utils/MoodyCards";
+
 
 const Cart = () => {
   const [quantities, setQuantities] = useState({}); // Track individual quantities
-  const { cartProduct } = useContext(ProductContext);
+  const { cartProduct ,removeFromCart } = useContext(ProductContext);
   // console.log(cartProduct)
 // 
   // const flatedCartProduct = cartProduct.flat()

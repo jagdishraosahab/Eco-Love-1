@@ -8,7 +8,7 @@ function Cards({ items }) {
   const { img, productName, price, isAdded, isCart } = items;
   // console.log(isCart)
 
-  const { addToCart, removeFromCart } = useContext(ProductContext);
+  const {addToWishlist } = useContext(ProductContext);
 
   return (
     <>
@@ -20,17 +20,19 @@ function Cards({ items }) {
               src={img}
               alt=""
             />
-            <button
-              className={`lg:w-[35px] lg:h-[35px] w-[30px] h-[30px]   top-[2%] lg:top-[9.5%]  rounded-full ${
-                isAdded === true ? "bg-red-400" : " bg-slate-50"
-              } left-[79%] absolute `}
-            >
-              <span className="flex items-center  lg:flex lg:items-center lg:justify-center lg:mt-[2.2px] lg:ml-[1px]">
-                <CiHeart color=" black" size="2em" />
-              </span>
-            </button>
+           
           </div>
         </Link>
+        <button
+              onClick={()=>addToWishlist(productName)}
+              className={`lg:w-[35px] lg:h-[35px] w-[30px] h-[30px]  top-[2%] rounded-full ${
+                isAdded  ? "bg-red-400" : " bg-slate-50"
+              } left-[79%] absolute `}
+            >
+              <span className="flex items-center   lg:flex lg:items-center  lg:justify-center lg:mt-[2.2px] lg:ml-[1px]">
+                <CiHeart   color="black" size="2em" />
+              </span>
+            </button>
 
         <div className="details   mt-5">
           <h2 className="text-md font-[Poppins] font-bold leading-none tracking-tight">

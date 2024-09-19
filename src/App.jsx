@@ -7,6 +7,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Productpage from './utils/Productpage'
 import Account from './utils/Account'
 import Cart from './Component/Cart'
+import Wish from './Component/Wish'
 
 
 
@@ -23,6 +24,7 @@ function App() {
        <Route path='/catlog' element={<Catlog/>} />
        <Route path='/account' element={<Account/>} />
        <Route path='/cart' element={<Cart/>} />
+       <Route path='/wishlist' element={<Wish/>} />
 
 
        <Route path='/productpage/:id' element={<Productpage/>} />

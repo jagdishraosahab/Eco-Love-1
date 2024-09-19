@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import WishList from "../utils/WishList";
 
 export const ProductContext = createContext("");
 
@@ -48,21 +49,21 @@ const Context = (props) => {
     },
     {
       page6: [
-        {img:"https://img.freepik.com/free-photo/composition-with-minimal-tumbler-beverages_23-2149029253.jpg?t=st=1714744324~exp=1714747924~hmac=4683ea6becc9cb28e13ca23542eb6f286c63e5aeeb2bf45ad57a40a124a1ec8c&w=360" , productName:"Orgnic Bag" ,price:"7" , isLiked:false , isCart:false},
-        {img:"https://img.freepik.com/free-photo/top-view-notebook-with-tooth-brush_23-2148576620.jpg?t=st=1714744413~exp=1714748013~hmac=e25c8343cd97f8e6edf6745d974a02f876497301a13d549fa6150303cf27d60a&w=996" , productName:"Organic ToothbrushSet" ,price:"5" , isLiked:false , isCart:false},
-        {img:"https://img.freepik.com/free-photo/front-view-argan-product-assortment_23-2148955770.jpg?t=st=1714744577~exp=1714748177~hmac=e1461301aafaf497ed8d3ad3dd62490171e20b246af1e0c2a6916674da6b0ec4&w=360" , productName:"Body Set After Shower" ,price:"10" , isLiked:false , isCart:false},
-        {img:"https://img.freepik.com/free-photo/set-cartoon-glasses-forks_23-2148576743.jpg?t=st=1714744498~exp=1714748098~hmac=1734041f446df5e4b0ed9bf389153824e46d89d1cfd427e8a0148c9aaeedcf32&w=826" , productName:"Orgainc Set For Picnic" ,price:"8" , isLiked:false , isCart:false},
-        {img:"https://img.freepik.com/premium-photo/christmas-zero-waste-concept-new-year-eco-friendly-packaging-festive-boxes-craft-paper-sacks-with-different-organic-decorations_164638-5773.jpg?w=996" , productName:"More Gifts" ,price:"" , isLiked:false , isCart:false},
+        {img:"https://img.freepik.com/free-photo/composition-with-minimal-tumbler-beverages_23-2149029253.jpg?t=st=1714744324~exp=1714747924~hmac=4683ea6becc9cb28e13ca23542eb6f286c63e5aeeb2bf45ad57a40a124a1ec8c&w=360" , productName:"Orgnic Bag" ,price:"7" , isAdded:false , isCart:false},
+        {img:"https://img.freepik.com/free-photo/top-view-notebook-with-tooth-brush_23-2148576620.jpg?t=st=1714744413~exp=1714748013~hmac=e25c8343cd97f8e6edf6745d974a02f876497301a13d549fa6150303cf27d60a&w=996" , productName:"Organic ToothbrushSet" ,price:"5" , isAdded:false , isCart:false},
+        {img:"https://img.freepik.com/free-photo/front-view-argan-product-assortment_23-2148955770.jpg?t=st=1714744577~exp=1714748177~hmac=e1461301aafaf497ed8d3ad3dd62490171e20b246af1e0c2a6916674da6b0ec4&w=360" , productName:"Body Set After Shower" ,price:"10" , isAdded:false , isCart:false},
+        {img:"https://img.freepik.com/free-photo/set-cartoon-glasses-forks_23-2148576743.jpg?t=st=1714744498~exp=1714748098~hmac=1734041f446df5e4b0ed9bf389153824e46d89d1cfd427e8a0148c9aaeedcf32&w=826" , productName:"Orgainc Set For Picnic" ,price:"8" , isAdded:false , isCart:false},
+        {img:"https://img.freepik.com/premium-photo/christmas-zero-waste-concept-new-year-eco-friendly-packaging-festive-boxes-craft-paper-sacks-with-different-organic-decorations_164638-5773.jpg?w=996" , productName:"More Gifts" ,price:"" , isAdded:false , isCart:false},
         
     ]
     },
     {
       page7: [
-        { img: "https://img.freepik.com/free-photo/natural-self-care-assortment_23-2148989949.jpg?t=st=1714750011~exp=1714753611~hmac=ba1dc1ad1a4f642ed8109d2b55044a09755ba26f4fbe028c6554efc5dce1d2e8&w=360", productName: "Wooden Toothbrush", price: "3", isLiked: false, isCart: false },
-        { img: "https://img.freepik.com/free-photo/front-view-argan-product-composition_23-2148955780.jpg?t=st=1714750085~exp=1714753685~hmac=be84a4ddae32cce134221525b0002462b5ea132f224392452d6e92fc9780c974&w=360", productName: "Organic Baby oil", price: "15", isLiked: false, isCart: false },
-        { img: "https://img.freepik.com/free-photo/eco-friendly-disposable-tableware-flat-lay_23-2148723782.jpg?t=st=1714750166~exp=1714753766~hmac=b0391850e5ba519a85b5b8b66ee81d7778d1d34d83e98f6294ef496122da3176&w=740", productName: "Wooden Paper Dishes", price: "11", isLiked: false, isCart: false },
-        { img: "https://img.freepik.com/free-photo/sport-element-arrangement-minimal-style_23-2149006304.jpg?t=st=1714750239~exp=1714753839~hmac=c61dedd8e1d823542fa9b72491ef8d7732469dd6738f1347daff576b1b4c8c1c&w=826", productName: "Steel Tharmal Bottle", price: "17", isLiked: false, isCart: false },
-        { img: "https://img.freepik.com/free-photo/front-view-wooden-spoons-with-pots-cinnamon-dark-table-photo-color-seasoning-salt-cutlery_179666-17653.jpg?t=st=1714750297~exp=1714753897~hmac=89fb76de955ef37431a2cffa2eeb52bd330de0f3eaf9e4a140ecf7d227dd7210&w=996", productName: "For More", price: "", isLiked: false, isCart: false },
+        { img: "https://img.freepik.com/free-photo/natural-self-care-assortment_23-2148989949.jpg?t=st=1714750011~exp=1714753611~hmac=ba1dc1ad1a4f642ed8109d2b55044a09755ba26f4fbe028c6554efc5dce1d2e8&w=360", productName: "Wooden Toothbrush", price: "3", isAdded: false, isCart: false },
+        { img: "https://img.freepik.com/free-photo/front-view-argan-product-composition_23-2148955780.jpg?t=st=1714750085~exp=1714753685~hmac=be84a4ddae32cce134221525b0002462b5ea132f224392452d6e92fc9780c974&w=360", productName: "Organic Baby oil", price: "15", isAdded: false, isCart: false },
+        { img: "https://img.freepik.com/free-photo/eco-friendly-disposable-tableware-flat-lay_23-2148723782.jpg?t=st=1714750166~exp=1714753766~hmac=b0391850e5ba519a85b5b8b66ee81d7778d1d34d83e98f6294ef496122da3176&w=740", productName: "Wooden Paper Dishes", price: "11", isAdded: false, isCart: false },
+        { img: "https://img.freepik.com/free-photo/sport-element-arrangement-minimal-style_23-2149006304.jpg?t=st=1714750239~exp=1714753839~hmac=c61dedd8e1d823542fa9b72491ef8d7732469dd6738f1347daff576b1b4c8c1c&w=826", productName: "Steel Tharmal Bottle", price: "17", isAdded: false, isCart: false },
+        { img: "https://img.freepik.com/free-photo/front-view-wooden-spoons-with-pots-cinnamon-dark-table-photo-color-seasoning-salt-cutlery_179666-17653.jpg?t=st=1714750297~exp=1714753897~hmac=89fb76de955ef37431a2cffa2eeb52bd330de0f3eaf9e4a140ecf7d227dd7210&w=996", productName: "For More", price: "", isAdded: false, isCart: false },
       ]
     
     }
@@ -71,6 +72,7 @@ const Context = (props) => {
   ]);
 
   const [cartProduct, setCartProduct] = useState([]);
+  const [wishListProduct, setWishListProduct] = useState([]);
 
 const flatMapProduct = product.reduce((acc, product) =>{
  const itmes = Object.keys(product).filter(keys => keys.startsWith('page')).reduce((acc, key)=>acc.concat(product[key]),[])
@@ -98,7 +100,33 @@ const flatMapProduct = product.reduce((acc, product) =>{
   
     setProduct(updatedProduct)
   };
-  console.log(cartProduct)
+  
+  const addToWishlist= (index) => {
+    console.log(index)
+    const addedProduct = flatMapProduct.filter((item) => item.productName === index);
+    console.log(addedProduct)
+    setWishListProduct((prevCart) => [...prevCart , ...addedProduct]);
+
+    
+
+    const updatedProduct = product.map((obj) => {
+     
+      const updatedPages = Object.keys(obj).reduce((acc, key) => {
+        acc[key] = obj[key].map((item) =>
+          item.productName === index ? { ...item, isAdded: true } : item
+        );
+       
+        return acc;
+      }, {});
+
+      return updatedPages;
+    });
+
+    console.log(WishList)
+  
+    setProduct(updatedProduct)
+  };
+  
   
   
 
@@ -123,29 +151,12 @@ const flatMapProduct = product.reduce((acc, product) =>{
     setProduct(updatedProduct);
   };
 
-  const removeFromCartPage5 = (name) => {
-    // Filter out the item from the cart based on the index
-    const updatedCart = cartProduct.filter((item, i) => item.productName !== name);
-    setCartProduct(updatedCart);
   
-    // Update the 'isCart' value to false for the item being removed
-    const updatedProduct = [...product];
-    updatedProduct[1] = {
-      ...updatedProduct[1],
-      page4: updatedProduct[1].page5.map((item, i) =>
-        i === index
-          ? { ...item,  isAdded: false }
-          : item
-      ),
-    };
-  
-    setProduct(updatedProduct);
-  };
   
   
   return (
     <ProductContext.Provider
-      value={{ product, setProduct, addToCart, cartProduct , removeFromCart,removeFromCartPage5 ,flatMapProduct }}
+      value={{ product, setProduct, addToCart, cartProduct , removeFromCart, addToWishlist ,wishListProduct,flatMapProduct }}
     >
       {props.children}
     </ProductContext.Provider>

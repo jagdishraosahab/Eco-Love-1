@@ -18,7 +18,7 @@ function Navbar() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   // console.log(value)
 
-  const { cartProduct, product, flatMapProduct } = useContext(ProductContext);
+  const { cartProduct, product, flatMapProduct ,wishListProduct } = useContext(ProductContext);
 
   const findBySearch = _.debounce((value) => {
     if (!product || product.length === 0) return; // Handle empty or undefined products
@@ -153,10 +153,10 @@ function Navbar() {
           <NavLink to="/account" className="hidden lg:block">
             Account
           </NavLink>
-          <NavLink className="hidden lg:flex items-center gap-1">
+          <NavLink to="/wishlist" className="hidden lg:flex items-center gap-1">
             Whishlist{" "}
             <span className="w-[17px] flex items-center justify-center h-[17px]  text-center text-sm bg-red-500 rounded-full text-white">
-              5
+              {wishListProduct.length}
             </span>
           </NavLink>
           <NavLink to="/cart" className="flex items-center gap-1">
