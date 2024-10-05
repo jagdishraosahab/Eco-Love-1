@@ -11,7 +11,7 @@ function Page1() {
           initial={{ y: 100, opacity: 0 }}
           transition={{ ease: "linear", duration: 0.3, delay: 0.3 }}
           className="text-[4.9vh] lg:text-8xl font-[NewYork] uppercase text-[#838A60] "
-        >
+        > 
           Green City Style
         </motion.h1>
 
